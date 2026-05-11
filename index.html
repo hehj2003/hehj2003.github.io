@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hongjin He (何洪津) — Homepage</title>
+    <meta name="description" content="Personal homepage of Hongjin He, Professor at Ningbo University">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ---- Reset & Base ---- */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: #222;
+            background: #f5f7fa;
+            line-height: 1.7;
+        }
+        a { color: #1a56db; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        img { max-width: 100%; height: auto; }
+
+        /* ---- Layout ---- */
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+
+        /* ---- Nav ---- */
+        nav {
+            position: sticky; top: 0; z-index: 100;
+            background: rgba(255,255,255,0.92);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid #e8ecf0;
+        }
+        nav .container {
+            display: flex; justify-content: space-between; align-items: center;
+            height: 56px;
+        }
+        nav .logo { font-weight: 700; font-size: 1.05rem; color: #1a56db; }
+        nav ul { list-style: none; display: flex; gap: 28px; }
+        nav ul li a {
+            font-size: 0.88rem; font-weight: 500; color: #444;
+            padding: 4px 0; transition: color 0.2s;
+        }
+        nav ul li a:hover { color: #1a56db; text-decoration: none; }
+        .nav-toggle { display: none; background: none; border: none; font-size: 1.4rem; cursor: pointer; color: #444; }
+
+        /* ---- Hero ---- */
+        .hero {
+            background: linear-gradient(135deg, #1a3a5c 0%, #2563eb 100%);
+            color: #fff; padding: 64px 0 48px;
+        }
+        .hero .container { display: flex; align-items: center; gap: 40px; flex-wrap: wrap; }
+        .hero-info { flex: 1; min-width: 280px; }
+        .hero-info h1 { font-size: 2.2rem; font-weight: 700; margin-bottom: 4px; }
+        .hero-info h1 small { font-size: 1.2rem; font-weight: 400; opacity: 0.85; margin-left: 10px; }
+        .hero-info .title-line { font-size: 1.05rem; font-weight: 500; margin-top: 8px; opacity: 0.92; }
+        .hero-info .affil-line { font-size: 0.95rem; margin-top: 2px; opacity: 0.85; }
+        .hero-links { margin-top: 16px; display: flex; flex-wrap: wrap; gap: 8px 16px; }
+        .hero-links a {
+            color: #fff; font-size: 0.88rem; display: inline-flex; align-items: center; gap: 5px;
+            background: rgba(255,255,255,0.15); padding: 6px 14px; border-radius: 20px;
+            transition: background 0.2s;
+        }
+        .hero-links a:hover { background: rgba(255,255,255,0.28); text-decoration: none; }
+        .hero-avatar { flex-shrink: 0; }
+        .hero-avatar img {
+            width: 160px; height: 160px; border-radius: 50%; object-fit: cover;
+            border: 3px solid rgba(255,255,255,0.4);
+        }
+
+        /* ---- Sections ---- */
+        section { padding: 48px 0; }
+        section:nth-child(even) { background: #fff; }
+        section:nth-child(odd) { background: #f5f7fa; }
+        .section-title {
+            font-size: 1.4rem; font-weight: 700; color: #1a3a5c;
+            margin-bottom: 24px; padding-bottom: 10px;
+            border-bottom: 2px solid #2563eb;
+        }
+
+        /* ---- About ---- */
+        .about-text { font-size: 0.95rem; line-height: 1.8; }
+
+        /* ---- Items (education, work) ---- */
+        .item-list { list-style: none; }
+        .item-list li {
+            padding: 10px 0; border-bottom: 1px solid #eef1f5;
+            display: flex; gap: 16px; font-size: 0.95rem;
+        }
+        .item-list li:last-child { border-bottom: none; }
+        .item-date { flex-shrink: 0; color: #2563eb; font-weight: 500; min-width: 110px; }
+        .item-content { flex: 1; }
+
+        /* ---- Research Interests ---- */
+        .interest-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+        .interest-tags span {
+            background: #e8edf5; color: #1a3a5c; padding: 6px 16px;
+            border-radius: 20px; font-size: 0.88rem; font-weight: 500;
+        }
+
+        /* ---- Publications ---- */
+        .pub-year { margin-top: 28px; }
+        .pub-year:first-child { margin-top: 0; }
+        .pub-year h3 {
+            font-size: 1.05rem; font-weight: 700; color: #2563eb;
+            margin-bottom: 12px; padding-bottom: 4px;
+            border-bottom: 1px dashed #d0d7e2;
+        }
+        .pub-list { list-style: none; counter-reset: pub-counter; }
+        .pub-list li {
+            counter-increment: pub-counter;
+            padding: 8px 0 8px 32px; position: relative;
+            font-size: 0.92rem; line-height: 1.7;
+            border-bottom: 1px solid #f0f2f5;
+        }
+        .pub-list li::before {
+            content: "[" counter(pub-counter) "]";
+            position: absolute; left: 0; color: #2563eb; font-weight: 600; font-size: 0.85rem;
+        }
+        .pub-list li .pub-title { font-weight: 600; }
+        .pub-list li .pub-authors { color: #444; }
+        .pub-list li .pub-authors b { color: #222; font-weight: 700; }
+        .pub-list li .pub-journal { color: #666; font-style: italic; }
+        .pub-list li .pub-links { display: inline-flex; gap: 6px; margin-left: 6px; }
+        .pub-list li .pub-links a {
+            font-size: 0.78rem; background: #e8edf5; padding: 1px 8px; border-radius: 10px;
+            color: #1a56db;
+        }
+        .pub-list li .pub-links a:hover { background: #d0ddf0; text-decoration: none; }
+
+        .pub-submitted .pub-list li::before { content: "•"; color: #e67e22; font-size: 1.2rem; }
+
+        /* ---- Contact ---- */
+        .contact-grid { display: flex; flex-wrap: wrap; gap: 20px; }
+        .contact-item { flex: 1; min-width: 200px; }
+        .contact-item label { display: block; font-size: 0.82rem; font-weight: 600; color: #888; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+        .contact-item p { font-size: 0.95rem; }
+
+        /* ---- Footer ---- */
+        footer {
+            text-align: center; padding: 24px 0;
+            font-size: 0.82rem; color: #999;
+            background: #fff; border-top: 1px solid #e8ecf0;
+        }
+
+        /* ---- Responsive ---- */
+        @media (max-width: 700px) {
+            nav ul { display: none; flex-direction: column; background: #fff; position: absolute; top: 56px; left: 0; right: 0; padding: 12px 24px; border-bottom: 1px solid #e8ecf0; gap: 0; }
+            nav ul.open { display: flex; }
+            nav ul li a { display: block; padding: 10px 0; border-bottom: 1px solid #f0f2f5; }
+            .nav-toggle { display: block; }
+            .hero { padding: 40px 0 32px; }
+            .hero .container { flex-direction: column-reverse; text-align: center; }
+            .hero-info h1 { font-size: 1.6rem; }
+            .hero-links { justify-content: center; }
+            .hero-avatar img { width: 120px; height: 120px; }
+            .item-list li { flex-direction: column; gap: 4px; }
+            .item-date { min-width: 0; }
+            .pub-list li { padding-left: 28px; font-size: 0.88rem; }
+        }
+
+        /* ---- Print ---- */
+        @media print {
+            nav { display: none; }
+            .hero { background: #1a3a5c !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ======== Navigation ======== -->
+<nav>
+    <div class="container">
+        <span class="logo">Hongjin He</span>
+        <button class="nav-toggle" onclick="document.querySelector('nav ul').classList.toggle('open')" aria-label="Toggle menu">☰</button>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#publications">Publications</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- ======== Hero ======== -->
+<header class="hero">
+    <div class="container">
+        <div class="hero-info">
+            <h1>Hongjin He <small>何洪津</small></h1>
+            <p class="title-line">Professor</p>
+            <p class="affil-line">School of Mathematics and Statistics, Ningbo University</p>
+            <p class="affil-line">Fengxian Campus, Ningbo, Zhejiang, China</p>
+            <div class="hero-links">
+                <a href="mailto:hehongjin@nbu.edu.cn">✉ hehongjin@nbu.edu.cn</a>
+                <a href="https://github.com/hehj2003" target="_blank">GitHub</a>
+                <a href="#publications">Google Scholar</a>
+            </div>
+        </div>
+        <div class="hero-avatar">
+            <div style="width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;font-size:3rem;font-weight:700;color:rgba(255,255,255,0.6);border:3px solid rgba(255,255,255,0.4);">
+                H
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- ======== About ======== -->
+<section id="about">
+    <div class="container">
+        <h2 class="section-title">About</h2>
+        <div class="about-text">
+            <p>I am a Professor at the School of Mathematics and Statistics, Ningbo University. My research centers on <strong>optimization theory and methods</strong>, with a particular focus on splitting algorithms, proximal methods, and their applications in signal processing, image processing, and tensor computations.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ======== Research Interests ======== -->
+<section id="research">
+    <div class="container">
+        <h2 class="section-title">Research Interests</h2>
+        <div class="interest-tags">
+            <span>Optimization Theory and Methods</span>
+            <span>Splitting Algorithms</span>
+            <span>Proximal Methods</span>
+            <span>ADMM</span>
+            <span>Primal-Dual Algorithms</span>
+            <span>DC Programming</span>
+            <span>Tensor Computation</span>
+            <span>Image Processing</span>
+            <span>Signal Processing</span>
+            <span>Sparse Optimization</span>
+        </div>
+    </div>
+</section>
+
+<!-- ======== Experience ======== -->
+<section id="experience">
+    <div class="container">
+        <h2 class="section-title">Experience</h2>
+
+        <h3 style="font-size:1rem;font-weight:700;color:#1a3a5c;margin:16px 0 8px;">Work</h3>
+        <ul class="item-list">
+            <li>
+                <span class="item-date">2021.05 – Present</span>
+                <span class="item-content"><strong>Professor</strong>, School of Mathematics and Statistics, Ningbo University</span>
+            </li>
+        </ul>
+
+        <h3 style="font-size:1rem;font-weight:700;color:#1a3a5c;margin:20px 0 8px;">Education</h3>
+        <ul class="item-list">
+            <li>
+                <span class="item-date">2007.09 – 2012.06</span>
+                <span class="item-content"><strong>Ph.D.</strong>, Nanjing Normal University</span>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<!-- ======== Publications ======== -->
+<section id="publications">
+    <div class="container">
+        <h2 class="section-title">Publications</h2>
+
+        <!-- 2026 -->
+        <div class="pub-year">
+            <h3>2026</h3>
+            <ol class="pub-list">
+                <li>
+                    <span class="pub-title">A symmetric primal-dual algorithmic framework for saddle point problems</span><br>
+                    <span class="pub-authors"><b>Hongjin He</b>, Kai Wang, Jintao Yu</span><br>
+                    <span class="pub-journal">Journal of Computational Mathematics, 44 (2026) 1049–1082</span>
+                    <span class="pub-links"><a href="https://journal.global-sci.org/intro/online/read?online_id=2829" target="_blank">Link</a></span>
+                </li>
+                <li>
+                    <span class="pub-title">Enhancing Tucker Tensor Completion via Laplace-Like Nonconvex Surrogates and Structural Regularization</span><br>
+                    <span class="pub-authors">Wenhui Xie, Lei-Hong Zhang, Chen Ling, <b>Hongjin He</b></span><br>
+                    <span class="pub-journal">Journal of Scientific Computing, 106 (2026) Article No. 78</span>
+                    <span class="pub-links"><a href="https://doi.org/10.1007/s10915-026-03205-y" target="_blank">DOI</a></span>
+                </li>
+                <li>
+                    <span class="pub-title">A multi-step inertial Bregman proximal DC algorithm and its application to solving some inverse problems</span><br>
+                    <span class="pub-authors">Zhixue Wang, Chenjian Pan, <b>Hongjin He</b></span><br>
+                    <span class="pub-journal">Journal of Computational and Applied Mathematics, 473 (2026) 116923</span>
+                    <span class="pub-links"><a href="https://www.sciencedirect.com/science/article/abs/pii/S0377042725004376" target="_blank">Link</a></span>
+                </li>
+                <li>
+                    <span class="pub-title">Removing impulsive noise for unsourced massive random access via a practical inexact ADMM</span><br>
+                    <span class="pub-authors">Yannan Chen, <b>Hongjin He</b>, Liqun Qi, Xinzhen Zhang</span><br>
+                    <span class="pub-journal">Optimization and Engineering, to appear</span>
+                    <span class="pub-links"><a href="https://doi.org/10.1007/s11081-025-09998-5" target="_blank">DOI</a></span>
+                </li>
+                <li>
+                    <span class="pub-title">Implementing ADMM for nonconvex composite optimization with a beyond-quadratic loss function</span><br>
+                    <span class="pub-authors">Pengcheng Lin, Jiajun Hao, Linan Zhang, <b>Hongjin He</b></span><br>
+                    <span class="pub-journal">Optimization, to appear</span>
+                </li>
+            </ol>
+        </div>
+
+        <!-- 2025 -->
+        <div class="pub-year">
+            <h3>2025</h3>
+            <ol class="pub-list">
+                <li>
+                    <span class="pub-title">Practical proximal primal-dual algorithms for structured saddle point problems</span><br>
+                    <span class="pub-authors">Yunfei Qu, <b>Hongjin He</b>, Tao Zhang, Deren Han</span><br>
+                    <span class="pub-journal">Journal of Global Optimization, 93 (2025) 803–831</span>
+                    <span class="pub-links"><a href="https://doi.org/10.1007/s10898-025-01545-x" target="_blank">DOI</a></span>
+                </li>
+                <li>
+                    <span class="pub-title">A multi-step inertial extragradient algorithm for nonsmooth and nonconvex composite optimization problems</span><br>
+                    <span class="pub-authors">Zhixue Wang, <b>Hongjin He</b></span><br>
+                    <span class="pub-journal">Journal of Global Optimization, 93 (2025) 489–521</span>
+                    <span class="pub-links"><a href="https://doi.org/10.1007/s10898-025-01532-2" target="_blank">DOI</a></span>
+                </li>
+                <li>
+                    <span class="pub-title">Inertial proximal extragradient algorithms for nonsmooth composite optimization</span><br>
+                    <span class="pub-authors">Jintao Yu, Zhou Wang, Qun Wang, <b>Hongjin He</b></span><br>
+                    <span class="pub-journal">Optimization Eruditorum, 2 (2025) 97–115</span>
+                    <span class="pub-links"><a href="https://doi.org/10.69829/oper-025-0202-ta02" target="_blank">DOI</a></span>
+                </li>
+                <li>
+                    <span class="pub-title">An implementable proximal extragradient method for structured fractional programming</span><br>
+                    <span class="pub-authors">Jiajun Hao, <b>Hongjin He</b>, Liangshao Hou</span><br>
+                    <span class="pub-journal">Journal of Optimization Theory and Applications, 207 (2025) Article No. 35</span>
+                    <span class="pub-links"><a href="https://link.springer.com/article/10.1007/s10957-025-02799-x" target="_blank">Link</a></span>
+                </li>
+                <li>
+                    <span class="pub-title">Solving basis pursuit revisited: When ADMM meets the inherent separable structure</span><br>
+                    <span class="pub-authors">Yifan Wu, Kai Wang, <b>Hongjin He</b></span><br>
+                    <span class="pub-journal">Journal of Applied and Numerical Optimization, 7 (2025) 1–18</span>
+                    <span class="pub-links"><a href="https://jano.biemdas.com/issues/JANO2025-1-1.pdf" target="_blank">PDF</a></span>
+                </li>
+                <li>
+                    <span class="pub-title">An inertial Bregman proximal DC algorithm for generalized DC programming with application to data completion</span><br>
+                    <span class="pub-authors">Chenjian Pan, Yingxin Zhou, <b>Hongjin He</b>, Chen Ling</span><br>
+                    <span class="pub-journal">Communications in Optimization Theory, 2025 (2025) Article ID 7, pp. 1–22</span>
+                    <span class="pub-links"><a href="https://cot.mathres.org/archives/1889" target="_blank">Link</a></span>
+                </li>
+            </ol>
+        </div>
+
+        <!-- 2024 -->
+        <div class="pub-year">
+            <h3>2024</h3>
+            <ol class="pub-list">
+                <li>
+                    <span class="pub-title">A unified Bregman alternating minimization algorithm for generalized DC programs with application to imaging</span><br>
+                    <span class="pub-authors"><b>Hongjin He</b>, Zhiyuan Zhang</span><br>
+                    <span class="pub-journal">Journal of Scientific Computing, 101 (2024) Article No. 76 (42 pages)</span>
+                    <span class="pub-links"><a href="https://doi.org/10.1007/s10915-024-02715-x" target="_blank">DOI</a></span>
+                </li>
+                <li>
+                    <span class="pub-title">Robust tensor recovery via a nonconvex approach with ket augmentation and auto-weighted strategy</span><br>
+                    <span class="pub-authors">Wenhui Xie, Chen Ling, <b>Hongjin He</b>, Lei-Hong Zhang</span><br>
+                    <span class="pub-journal">Numerical Linear Algebra with Applications, 31 (2024) e2580</span>
+                    <span class="pub-links"><a href="https://onlinelibrary.wiley.com/doi/abs/10.1002/nla.2580" target="_blank">Link</a></span>
+                </li>
+                <li>
+                    <span class="pub-title">A new low-rank prior tensor linear regression with application to data analysis</span><br>
+                    <span class="pub-authors">Chenjian Pan, <b>Hongjin He</b>, Chen Ling</span><br>
+                    <span class="pub-journal">Pacific Journal of Optimization, 20 (2024) 569–588</span>
+                    <span class="pub-links"><a href="http://www.yokohamapublishers.jp/online2/pjov20-3.html" target="_blank">Link</a></span>
+                </li>
+                <li>
+                    <span class="pub-title">A tensor train approach for internet traffic data completion</span><br>
+                    <span class="pub-authors">Zhiyuan Zhang, Chen Ling, <b>Hongjin He</b>, Liqun Qi</span><br>
+                    <span class="pub-journal">Annals of Operations Research, 339 (2024) 1461–1479</span>
+                    <span class="pub-links"><a href="https://doi.org/10.1007/s10479-021-04147-4" target="_blank">DOI</a></span>
+                </li>
+                <li>
+                    <span class="pub-title">Spectral norm and von Neumann type trace inequality for dual quaternion matrices</span><br>
+                    <span class="pub-authors">Chen Ling, <b>Hongjin He</b>, Liqun Qi, Tingting Feng</span><br>
+                    <span class="pub-journal">Pacific Journal of Optimization, 20 (2024) 229–247</span>
+                </li>
+                <li>
+                    <span class="pub-title">"Sparse+Low-Rank" Tensor Completion Approach for Recovering Images and Videos</span><br>
+                    <span class="pub-authors">Chenjian Pan, Chen Ling, <b>Hongjin He</b>, Liqun Qi, Yanwei Xu</span><br>
+                    <span class="pub-journal">Signal Processing: Image Communication, 127 (2024) 117152</span>
+                    <span class="pub-links"><a href="https://doi.org/10.1016/j.image.2024.117152" target="_blank">DOI</a></span>
+                </li>
+                <li>
+                    <span class="pub-title">A proximal alternating direction method of multipliers for DC programming with structured constraints</span><br>
+                    <span class="pub-authors">Yingxin Zhou, <b>Hongjin He</b>, Linan Zhang</span><br>
+                    <span class="pub-journal">Journal of Scientific Computing, 99 (2024) Article No. 89</span>
+                    <span class="pub-links"><a href="https://link.springer.com/article/10.1007/s10915-024-02550-0" target="_blank">Link</a></span>
+                </li>
+                <li>
+                    <span class="pub-title">Solving split feasibility problems via block-wise formulation</span><br>
+                    <span class="pub-authors">Zhou Wang, <b>Hongjin He</b></span><br>
+                    <span class="pub-journal">Journal of Applied and Numerical Optimization, 6 (2024) 83–96</span>
+                </li>
+                <li>
+                    <span class="pub-title">Structured model selection via ℓ₁-ℓ₂ optimization</span><br>
+                    <span class="pub-authors">Xiaofan Lu, Linan Zhang, <b>Hongjin He</b></span><br>
+                    <span class="pub-journal">Inverse Problems, 40 (2024) 015011 (28pp)</span>
+                    <span class="pub-links"><a href="https://iopscience.iop.org/article/10.1088/1361-6420/ad0fad" target="_blank">DOI</a></span>
+                </li>
+                <li>
+                    <span class="pub-title">A partially inertial customized Douglas-Rachford splitting method for a class of structured optimization problems</span><br>
+                    <span class="pub-authors">Yunfei Qu, <b>Hongjin He</b>, Deren Han</span><br>
+                    <span class="pub-journal">Journal of Scientific Computing, 98 (2024) Article No. 9 (24 pages)</span>
+                    <span class="pub-links"><a href="https://doi.org/10.1007/s10915-023-02397-x" target="_blank">DOI</a></span>
+                </li>
+                <li>
+                    <span class="pub-title">A Low-rank and sparse enhanced Tucker decomposition approach for tensor completion</span><br>
+                    <span class="pub-authors">Chenjian Pan, Chen Ling, <b>Hongjin He</b>, Liqun Qi, Yanwei Xu</span><br>
+                    <span class="pub-journal">Applied Mathematics and Computation, 465 (2024) 128432</span>
+                </li>
+            </ol>
+        </div>
+
+        <!-- 2023 -->
+        <div class="pub-year">
+            <h3>2023</h3>
+            <ol class="pub-list">
+                <li>
+                    <span class="pub-title">A partially inexact generalized primal-dual hybrid gradient method for saddle point problems with bilinear couplings</span><br>
+                    <span class="pub-authors">Kai Wang, Jintao Yu, <b>Hongjin He</b></span><br>
+                    <span class="pub-journal">Journal of Applied Mathematics and Computing, 69 (2023) 3693–3719</span>
+                </li>
+                <li>
+                    <span class="pub-title">Transformed singular values and spectral norms of third-order tensors</span><br>
+                    <span class="pub-authors">Chen Ling, Wenhui Xie, <b>Hongjin He</b></span><br>
+                    <span class="pub-journal">Journal of Industrial and Management Optimization, 19 (2023) 6012–6023</span>
+                </li>
+                <li>
+                    <span class="pub-title">Solving saddle point problems: A landscape of primal-dual algorithm with larger stepsizes</span><br>
+                    <span class="pub-authors">Fan Jiang, Zhiyuan Zhang, <b>Hongjin He</b></span><br>
+                    <span class="pub-journal">Journal of Global Optimization, 85 (2023) 821–846</span>
+                </li>
+            </ol>
+        </div>
+
+        <!-- 2022 -->
+        <div class="pub-year">
+            <h3>2022</h3>
+            <ol class="pub-list">
+                <li>
+                    <span class="pub-title">Tensor completion via a generalized transformed tensor T-product decomposition without t-SVD</span><br>
+                    <span class="pub-authors"><b>Hongjin He</b>, Chen Ling, Wenhui Xie</span><br>
+                    <span class="pub-journal">Journal of Scientific Computing, 93 (2022) Article No. 47 (35 pages)</span>
+                    <span class="pub-links"><a href="https://doi.org/10.1007/s10915-022-02006-3" target="_blank">DOI</a></span>
+                </li>
+                <li>
+                    <span class="pub-title">A doubly sparse and low-patch-rank prior model for image restoration</span><br>
+                    <span class="pub-authors"><b>Hongjin He</b>, Lulu Zhao</span><br>
+                    <span class="pub-journal">Applied Mathematical Modelling, 112 (2022) 786–799</span>
+                </li>
+                <li>
+                    <span class="pub-title">Singular values of dual quaternion matrices and their low-rank approximations</span><br>
+                    <span class="pub-authors">Chen Ling, <b>Hongjin He</b>, Liqun Qi</span><br>
+                    <span class="pub-journal">Numerical Functional Analysis and Optimization, 43 (2022) 1423–1458</span>
+                    <span class="pub-links"><a href="https://doi.org/10.1080/01630563.2022.2108835" target="_blank">DOI</a></span>
+                </li>
+                <li>
+                    <span class="pub-title">A unified Douglas-Rachford algorithm for generalized DC programming</span><br>
+                    <span class="pub-authors">Chih-Sheng Chuang, <b>Hongjin He</b>, Zhiyuan Zhang</span><br>
+                    <span class="pub-journal">Journal of Global Optimization, 82 (2022) 331–349</span>
+                    <span class="pub-links"><a href="https://doi.org/10.1007/s10898-021-01079-y" target="_blank">DOI</a></span>
+                </li>
+                <li>
+                    <span class="pub-title">An efficient alternating minimization method for fourth degree polynomial optimization</span><br>
+                    <span class="pub-authors">Haibin Chen, <b>Hongjin He</b>, Yiju Wang, Guanglu Zhou</span><br>
+                    <span class="pub-journal">Journal of Global Optimization, 82 (2022) 83–103</span>
+                    <span class="pub-links"><a href="https://link.springer.com/article/10.1007/s10898-021-01060-9" target="_blank">Link</a></span>
+                </li>
+            </ol>
+        </div>
+
+        <!-- 2021 -->
+        <div class="pub-year">
+            <h3>2021</h3>
+            <ol class="pub-list">
+                <li>
+                    <span class="pub-title">Adaptive multi-dimensional low-rank balance methods for tensor completion problems</span><br>
+                    <span class="pub-authors">Chenjian Pan, Chen Ling, <b>Hongjin He</b></span><br>
+                    <span class="pub-journal">Pacific Journal of Optimization, 17 (2021) 595–615</span>
+                </li>
+                <li>
+                    <span class="pub-title">A nonnegativity preserving algorithm for multilinear systems with nonsingular M-tensors</span><br>
+                    <span class="pub-authors">Xueli Bai, <b>Hongjin He</b>, Chen Ling, Guanglu Zhou</span><br>
+                    <span class="pub-journal">Numerical Algorithms, 87 (2021) 1301–1320</span>
+                    <span class="pub-links"><a href="https://doi.org/10.1007/s11075-020-01008-2" target="_blank">DOI</a></span>
+                </li>
+                <li>
+                    <span class="pub-title">Low patch-rank image decomposition using alternating minimization algorithms</span><br>
+                    <span class="pub-authors">Lulu Zhao, Cheng Chen, Tingxia Lu, Zhiyuan Zhang, <b>Hongjin He</b></span><br>
+                    <span class="pub-journal">Journal of Nonlinear and Variational Analysis, 5 (2021) 403–420</span>
+                </li>
+                <li>
+                    <span class="pub-title">A customized low-rank prior model for structured cartoon-texture image decomposition</span><br>
+                    <span class="pub-authors">Zhiyuan Zhang, <b>Hongjin He</b></span><br>
+                    <span class="pub-journal">Signal Processing: Image Communication, 96 (2021) 116308</span>
+                </li>
+                <li>
+                    <span class="pub-title">An index detecting algorithm for a class of TCP(A,q) equipped with nonsingular M-tensors</span><br>
+                    <span class="pub-authors"><b>Hongjin He</b>, Xueli Bai, Chen Ling, Guanglu Zhou</span><br>
+                    <span class="pub-journal">Journal of Computational and Applied Mathematics, 394 (2021) 113548</span>
+                    <span class="pub-links"><a href="https://doi.org/10.1016/j.cam.2021.113548" target="_blank">DOI</a></span>
+                </li>
+                <li>
+                    <span class="pub-title">A partially proximal linearized alternating minimization method for finding Dantzig selectors</span><br>
+                    <span class="pub-authors">Xiaoyu Mao, <b>Hongjin He</b>, Hong-Kun Xu</span><br>
+                    <span class="pub-journal">Computational and Applied Mathematics, 40 (2021) Article Number 62</span>
+                    <span class="pub-links"><a href="https://doi.org/10.1007/s40314-021-01450-5" target="_blank">DOI</a></span>
+                </li>
+                <li>
+                    <span class="pub-title">On projected alternating BB methods for variational inequalities</span><br>
+                    <span class="pub-authors">Yunfei Qu, Wanbin Tong, <b>Hongjin He</b>, Yeong-Cheng Liou</span><br>
+                    <span class="pub-journal">Optimization, 70 (2021) 827–846</span>
+                </li>
+            </ol>
+        </div>
+
+        <!-- 2020 and earlier -->
+        <div class="pub-year">
+            <h3>2020 & Earlier</h3>
+            <ol class="pub-list" start="0">
+                <li>
+                    <span class="pub-title">A double extrapolation primal-dual algorithm for saddle point problems</span><br>
+                    <span class="pub-authors">Kai Wang, <b>Hongjin He</b></span><br>
+                    <span class="pub-journal">Journal of Scientific Computing, 85 (2020) Article 30</span>
+                    <span class="pub-links"><a href="https://doi.org/10.1007/s10915-020-01330-w" target="_blank">DOI</a></span>
+                </li>
+                <li>
+                    <span class="pub-title">Further study on tensor absolute value equations</span><br>
+                    <span class="pub-authors">Chen Ling, Weijie Yan, <b>Hongjin He</b>, Liqun Qi</span><br>
+                    <span class="pub-journal">Science China: Mathematics, 63 (2020) 2137–2156</span>
+                    <span class="pub-links"><a href="https://doi.org/10.1007/s11425-018-9560-3" target="_blank">DOI</a></span>
+                </li>
+                <li>
+                    <span class="pub-title">Splitting methods for split feasibility problems with application to Dantzig selectors</span><br>
+                    <span class="pub-authors"><b>Hongjin He</b>, Hong-Kun Xu</span><br>
+                    <span class="pub-journal">Inverse Problems, 33 (2017) 055003 (28pp)</span>
+                    <span class="pub-links"><a href="http://iopscience.iop.org/article/10.1088/1361-6420/aa5ec5" target="_blank">DOI</a></span>
+                </li>
+                <li>
+                    <span class="pub-title">A customized Douglas-Rachford splitting algorithm for separable convex minimization with linear constraints</span><br>
+                    <span class="pub-authors">Deren Han, <b>Hongjin He</b>, Hai Yang, Xiaoming Yuan</span><br>
+                    <span class="pub-journal">Numerische Mathematik, 127 (2014) 167–200</span>
+                    <span class="pub-links"><a href="http://link.springer.com/article/10.1007/s00211-013-0580-2" target="_blank">DOI</a></span>
+                </li>
+            </ol>
+        </div>
+
+        <!-- Preprints / Submitted -->
+        <div class="pub-year pub-submitted">
+            <h3>Preprints & Submitted</h3>
+            <ul class="pub-list">
+                <li>
+                    <span class="pub-title">A Triple-Bregman Balanced Primal-Dual Algorithm for Saddle Point Problems</span><br>
+                    <span class="pub-authors">Jintao Yu, <b>Hongjin He</b></span><br>
+                    <span class="pub-journal">2025</span>
+                </li>
+                <li>
+                    <span class="pub-title">A Robust Low-Rank Prior Model for Structured Cartoon-Texture Image Decomposition with Heavy-Tailed Noise</span><br>
+                    <span class="pub-authors">Weihao Tang, <b>Hongjin He</b></span><br>
+                    <span class="pub-journal">2025</span>
+                </li>
+                <li>
+                    <span class="pub-title">Sparsity-Promoting Dynamic Mode Decomposition via Sequentially Thresholded Quadratic Programming</span><br>
+                    <span class="pub-authors">Linan Zhang, Huiying Liu, <b>Hongjin He</b>, Luonan Chen</span><br>
+                    <span class="pub-journal">2025</span>
+                </li>
+                <li>
+                    <span class="pub-title">Extragradient-like Proximal Alternating Linearized Minimization Algorithms for Nonconvex and Nonsmooth Optimization Problems</span><br>
+                    <span class="pub-authors">Chenjian Pan, Zhixue Wang, Liangshao Hou, <b>Hongjin He</b></span><br>
+                    <span class="pub-journal">2025</span>
+                </li>
+                <li>
+                    <span class="pub-title">A Mismatched Adaptive Anchoring Halpern Iteration Algorithm for Solving Linear Inverse Problems</span><br>
+                    <span class="pub-authors">Yanchao He, <b>Hongjin He</b>, Hong-Kun Xu, Hui Zhang</span><br>
+                    <span class="pub-journal">2026</span>
+                </li>
+                <li>
+                    <span class="pub-title">MORE: A Multi-pair Proximal Block Coordinate Descent Algorithm for Multi-block Composite Optimization with Applications in Tensor Decompositions</span><br>
+                    <span class="pub-authors">Chenjian Pan, <b>Hongjin He</b></span><br>
+                    <span class="pub-journal">2026</span>
+                </li>
+            </ol>
+        </div>
+
+        <p style="margin-top:20px;font-size:0.88rem;color:#888;">
+            <em>Note: For a complete list of publications, please visit my
+            <a href="https://scholar.google.com/citations?user=hehj2003" target="_blank">Google Scholar</a> profile.</em>
+        </p>
+    </div>
+</section>
+
+<!-- ======== Contact ======== -->
+<section id="contact">
+    <div class="container">
+        <h2 class="section-title">Contact</h2>
+        <div class="contact-grid">
+            <div class="contact-item">
+                <label>Email</label>
+                <p><a href="mailto:hehongjin@nbu.edu.cn">hehongjin@nbu.edu.cn</a></p>
+            </div>
+            <div class="contact-item">
+                <label>Affiliation</label>
+                <p>School of Mathematics and Statistics<br>Ningbo University<br>Fengxian Campus, Ningbo, Zhejiang, China</p>
+            </div>
+            <div class="contact-item">
+                <label>GitHub</label>
+                <p><a href="https://github.com/hehj2003" target="_blank">github.com/hehj2003</a></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ======== Footer ======== -->
+<footer>
+    <div class="container">
+        <p>&copy; 2026 Hongjin He. All rights reserved.</p>
+    </div>
+</footer>
+
+</body>
+</html>
