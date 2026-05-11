@@ -160,21 +160,19 @@
         .grant-num { color: #888; font-size: 0.85rem; }
 
         /* ---- Students ---- */
-        .student-category { margin-top: 20px; }
-        .student-category:first-child { margin-top: 0; }
-        .student-category h4 {
+        .student-grid { display: flex; gap: 40px; }
+        .student-grid .student-col { flex: 1; min-width: 0; }
+        .student-grid .student-col h4 {
             font-size: 1rem; font-weight: 700; color: #2563eb;
             margin-bottom: 10px; padding-bottom: 4px;
             border-bottom: 1px dashed #d0d7e2;
         }
-        .student-list { list-style: none; }
-        .student-list li {
+        .student-grid .student-col ul { list-style: none; }
+        .student-grid .student-col li {
             padding: 6px 0; font-size: 0.9rem; line-height: 1.6;
             border-bottom: 1px solid #f3f5f8;
         }
-        .student-list li:last-child { border-bottom: none; }
-        .student-thesis { color: #888; font-size: 0.85rem; }
-        .student-dest { color: #666; font-size: 0.85rem; }
+        .student-grid .student-col li:last-child { border-bottom: none; }
 
         /* ---- Contact ---- */
         .contact-grid { display: flex; flex-wrap: wrap; gap: 20px; }
@@ -841,42 +839,34 @@ switchLang('zh');
         <h4 style="font-size:0.95rem;font-weight:700;color:#1a3a5c;margin-bottom:8px;">主持项目</h4>
         <ul class="grant-list">
             <li>
-                <span class="grant-name">大规模多重非型结构复合优化的一阶算法及应用研究</span><br>
                 <span class="grant-source">国家自然科学基金面上项目</span>，<span class="grant-role">项目负责人（1/12）</span>，<span class="grant-date">2024/01–2027/12</span><br>
                 <span class="grant-num">项目号：12371303</span>
             </li>
             <li>
-                <span class="grant-name">面向结构型优化问题的并行分裂算法设计及应用</span><br>
                 <span class="grant-source">国家自然科学基金面上项目</span>，<span class="grant-role">项目负责人</span>，<span class="grant-date">2018/01–2021/12</span><br>
                 <span class="grant-num">项目号：11771113</span>
             </li>
             <li>
-                <span class="grant-name">新算子分裂法及其在可分离优化中的应用</span><br>
                 <span class="grant-source">国家自然科学基金青年基金项目</span>，<span class="grant-role">项目负责人</span>，<span class="grant-date">2014/01–2016/12</span><br>
                 <span class="grant-num">项目号：11301123</span>
             </li>
             <li>
-                <span class="grant-name">高维数据驱动的高效非凸优化方法及应用</span><br>
                 <span class="grant-source">浙江省自然科学基金重点项目</span>，<span class="grant-role">项目负责人（1/7）</span>，<span class="grant-date">2024/01–2026/12</span><br>
                 <span class="grant-num">项目号：LZ24A010001</span>
             </li>
             <li>
-                <span class="grant-name">结构型DC规划和相关非凸优化问题的分裂算法</span><br>
                 <span class="grant-source">浙江省自然科学基金探索项目</span>，<span class="grant-role">项目负责人</span>，<span class="grant-date">2020/01–2022/12</span><br>
                 <span class="grant-num">项目号：LY20A010018（2021年12月提前结题）</span>
             </li>
             <li>
-                <span class="grant-name">求解结构优化问题的若干新型Douglas-Rachford分裂算法研究</span><br>
                 <span class="grant-source">浙江省自然科学基金一般项目</span>，<span class="grant-role">项目负责人</span>，<span class="grant-date">2017/01–2019/12</span><br>
                 <span class="grant-num">项目号：LY17A010028（2018年12月提前结题）</span>
             </li>
             <li>
-                <span class="grant-name">人工智能驱动的大规模复合优化算法设计及应用</span><br>
                 <span class="grant-source">宁波市自然科学基金重点项目</span>，<span class="grant-role">项目负责人</span>，<span class="grant-date">2023/06–2026/05</span><br>
                 <span class="grant-num">项目号：2023J014</span>
             </li>
             <li>
-                <span class="grant-name">高维数据驱动的最优化理论和算法</span><br>
                 <span class="grant-source">宁波市"甬江引才工程"</span>，<span class="grant-role">项目负责人</span>，<span class="grant-date">2022/01–2026/05</span><br>
                 <span class="grant-num">城市经济领域创新个人</span>
             </li>
@@ -885,32 +875,26 @@ switchLang('zh');
         <h4 style="font-size:0.95rem;font-weight:700;color:#1a3a5c;margin:18px 0 8px;">参与项目</h4>
         <ul class="grant-list">
             <li>
-                <span class="grant-name">一类张量方程和多项式优化问题的理论分析与算法</span><br>
                 <span class="grant-source">国家自然科学基金面上项目</span>，<span class="grant-role">参与人（2/11）</span>，<span class="grant-date">2020/01–2023/12</span><br>
                 <span class="grant-num">项目号：11971138（项目负责人：凌晨教授）</span>
             </li>
             <li>
-                <span class="grant-name">若干张量特征值互补与相关多项式优化问题理论与算法</span><br>
                 <span class="grant-source">国家自然科学基金面上项目</span>，<span class="grant-role">参与人（3/10）</span>，<span class="grant-date">2016/01–2019/12</span><br>
                 <span class="grant-num">项目号：11571087（项目负责人：凌晨教授）</span>
             </li>
             <li>
-                <span class="grant-name">若干广义Nash均衡问题研究及应用</span><br>
                 <span class="grant-source">国家自然科学基金面上项目</span>，<span class="grant-role">参与人（4/9）</span>，<span class="grant-date">2015/01–2018/12</span><br>
                 <span class="grant-num">项目号：71471051（项目负责人：洪世煌教授）</span>
             </li>
             <li>
-                <span class="grant-name">张量数据深度学习/统计学习的优化理论方法及其应用</span><br>
                 <span class="grant-source">浙江省自然科学基金重大项目</span>，<span class="grant-role">参与人（5/7）</span>，<span class="grant-date">2019/01–2022/12</span><br>
                 <span class="grant-num">项目号：LD19A010002（项目负责人：喻高航教授）</span>
             </li>
             <li>
-                <span class="grant-name">结构性的非光滑约束方程组及相关优化问题的算法研究</span><br>
                 <span class="grant-source">浙江省自然科学基金重点项目</span>，<span class="grant-role">参与人（3/7）</span>，<span class="grant-date">2014/01–2017/12</span><br>
                 <span class="grant-num">项目号：LZ14A010003（项目负责人：凌晨教授）</span>
             </li>
             <li>
-                <span class="grant-name">高阶张量方程和相关优化问题的解集性质分析与算法设计</span><br>
                 <span class="grant-source">浙江省自然科学基金一般项目</span>，<span class="grant-role">参与人（2/4）</span>，<span class="grant-date">2019/01–2021/12</span><br>
                 <span class="grant-num">项目号：LY19A010019（项目负责人：凌晨教授）</span>
             </li>
@@ -923,116 +907,36 @@ switchLang('zh');
     <div class="container">
         <h2 class="section-title">学生培养</h2>
 
-        <div class="student-category">
-            <h4>硕士生</h4>
-            <ul class="student-list">
-                <li>
-                    <strong>凌莉芸</strong> <span class="student-dest">（单位：浙江财经大学）</span><br>
-                    <span class="student-thesis">题目：结构张量特征值互补问题的理论分析</span><br>
-                    <span class="student-dest">2018届 | 2015.09–2018.06</span>
-                </li>
-                <li>
-                    <strong>童皖彬</strong> <span class="student-dest">（单位：宁波舟山港股份有限公司）</span><br>
-                    <span class="student-thesis">题目：张量特征值互补问题的快速求解</span><br>
-                    <span class="student-dest">2020届 | 2017.09–2020.06</span>
-                </li>
-                <li>
-                    <strong>赵寒</strong> <span class="student-dest">（单位：济宁市北湖中学）</span><br>
-                    <span class="student-thesis">题目：解对称特征值互补问题的快速交替方向乘子法</span><br>
-                    <span class="student-dest">2021届 | 2018.09–2021.06</span>
-                </li>
-                <li>
-                    <strong>刘琬纯</strong> <span class="student-dest">（单位：中国建设银行安徽分行）</span><br>
-                    <span class="student-thesis">题目：解二次规划的快速交替方向乘子法及应用</span><br>
-                    <span class="student-dest">2021届 | 2018.09–2021.06</span>
-                </li>
-                <li>
-                    <strong>陆婷霞</strong> <span class="student-dest">（单位：中国农业银行杭州分行）</span><br>
-                    <span class="student-thesis">题目：分裂可行问题的算法与应用</span><br>
-                    <span class="student-dest">2022届 | 2019.09–2022.06</span>
-                </li>
-                <li>
-                    <strong>赵璐璐</strong> <span class="student-dest">（单位：福州大学2022级博士生）</span><br>
-                    <span class="student-thesis">题目：图像分解和恢复中的新优化模型和算法</span><br>
-                    <span class="student-dest">2022届 | 2019.09–2022.06</span>
-                </li>
-                <li>
-                    <strong>周颖欣</strong> <span class="student-dest">（单位：南安普顿大学2024级博士生）</span><br>
-                    <span class="student-thesis">题目：结构型凸差规划的一阶优化方法及应用</span><br>
-                    <span class="student-dest">2024届 | 2021.09–2024.06</span>
-                </li>
-                <li>
-                    <strong>汪周</strong><br>
-                    <span class="student-thesis">题目：结构型复合优化问题的快速算法及应用</span><br>
-                    <span class="student-dest">2024届 | 2021.09–2024.06</span>
-                </li>
-                <li>
-                    <strong>王知雪</strong> <span class="student-dest">（单位：Southern Methodist University 2025级博士生）</span><br>
-                    <span class="student-thesis">题目：多步惯性项一阶算法求解结构化非凸优化问题</span><br>
-                    <span class="student-dest">2025届 | 2022.09–2025.06</span>
-                </li>
-                <li>
-                    <strong>吴一凡</strong> <span class="student-dest">（单位：宁波市龙赛中学）</span><br>
-                    <span class="student-thesis">题目：解结构型凸优化问题的满线性化分裂算法及应用</span><br>
-                    <span class="student-dest">2025届 | 2022.09–2025.06</span>
-                </li>
-                <li>
-                    <strong>毛莹</strong><br>
-                    <span class="student-thesis">题目：两类凸差优化问题的一阶优化算法及应用</span><br>
-                    <span class="student-dest">2025届 | 2022.09–2025.06</span>
-                </li>
-            </ul>
-        </div>
-
-        <div class="student-category">
-            <h4>本科生</h4>
-            <ul class="student-list">
-                <li>
-                    <strong>何岸</strong> <span class="student-dest">（上海财经大学硕士 → 泰隆银行(杭州)）</span><br>
-                    <span class="student-thesis">题目：广义LASSO模型的求解及其图像处理中的应用</span><br>
-                    <span class="student-dest">2016届 | 2012.09–2016.06</span>
-                </li>
-                <li>
-                    <strong>张乾</strong> <span class="student-dest">（北京师范大学硕士 → 周口师范学院）</span><br>
-                    <span class="student-thesis">题目：解Dantzig-Selector模型的快速分解算法</span><br>
-                    <span class="student-dest">2016届 | 2012.09–2016.06</span>
-                </li>
-                <li>
-                    <strong>陈佩佩</strong> <span class="student-dest">（苏州大学硕士）</span><br>
-                    <span class="student-thesis">题目：CQ算法收敛性分析及应用</span><br>
-                    <span class="student-dest">2018届 | 2014.09–2018.06</span>
-                </li>
-                <li>
-                    <strong>屈云飞</strong> <span class="student-dest">（北京航空航天大学博士 → 中国地质大学(北京)）</span><br>
-                    <span class="student-thesis">题目：解变分不等式的交替BB步长投影算法</span><br>
-                    <span class="student-dest">2019届 | 2015.09–2019.06</span>
-                </li>
-                <li>
-                    <strong>茅小宇</strong> <span class="student-dest">（University of British Columbia硕士）</span><br>
-                    <span class="student-thesis">题目：部分线性化的交替方向法求解Dantzig Selector模型</span><br>
-                    <span class="student-dest">2021届 | 2017.09–2021.06</span>
-                </li>
-                <li>
-                    <strong>张致远</strong> <span class="student-dest">（厦门大学硕士 → Southern Methodist University 2024级博士生）</span><br>
-                    <span class="student-thesis">题目：结构型卡通纹理图像分解的低秩先验模型</span><br>
-                    <span class="student-dest">2021届 | 2017.09–2021.06</span>
-                </li>
-                <li>
-                    <strong>赵锡清</strong> <span class="student-dest">（宁波大学硕士）</span><br>
-                    <span class="student-thesis">题目：投资组合中的二次规划问题求解</span><br>
-                    <span class="student-dest">2024届 | 2020.09–2024.06</span>
-                </li>
-                <li>
-                    <strong>戴振宇</strong> <span class="student-dest">（宁波大学硕士）</span><br>
-                    <span class="student-thesis">题目：宁波市人才与经济发展的研究</span><br>
-                    <span class="student-dest">2024届 | 2020.09–2024.06</span>
-                </li>
-                <li>
-                    <strong>徐柯楠</strong> <span class="student-dest">（华东师范大学硕士）</span><br>
-                    <span class="student-thesis">题目：块结构视角下的Douglas-Rachford分裂算法及应用</span><br>
-                    <span class="student-dest">2025届 | 2021.09–2025.06</span>
-                </li>
-            </ul>
+        <div class="student-grid">
+            <div class="student-col">
+                <h4>硕士生</h4>
+                <ul>
+                    <li><strong>童皖彬</strong></li>
+                    <li><strong>赵寒</strong></li>
+                    <li><strong>刘琬纯</strong></li>
+                    <li><strong>陆婷霞</strong></li>
+                    <li><strong>赵璐璐</strong></li>
+                    <li><strong>周颖欣</strong></li>
+                    <li><strong>汪周</strong></li>
+                    <li><strong>王知雪</strong></li>
+                    <li><strong>吴一凡</strong></li>
+                    <li><strong>毛莹</strong></li>
+                </ul>
+            </div>
+            <div class="student-col">
+                <h4>本科生</h4>
+                <ul>
+                    <li><strong>何岸</strong></li>
+                    <li><strong>张乾</strong></li>
+                    <li><strong>陈佩佩</strong></li>
+                    <li><strong>屈云飞</strong></li>
+                    <li><strong>茅小宇</strong></li>
+                    <li><strong>张致远</strong></li>
+                    <li><strong>赵锡清</strong></li>
+                    <li><strong>戴振宇</strong></li>
+                    <li><strong>徐柯楠</strong></li>
+                </ul>
+            </div>
         </div>
     </div>
 </section>
