@@ -21,7 +21,7 @@
         <div class="gate-card">
             <div class="gate-icon">🔒</div>
             <h2>课程答疑讨论区</h2>
-            <p class="gate-hint">请输入访问密码以查看讨论内容</p>
+            <p class="gate-hint">请输入访问密码以查看讨论内容与课件</p>
             <form id="gate-form" autocomplete="off">
                 <input type="password" id="gate-input" placeholder="请输入密码" />
                 <button type="submit">解锁</button>
@@ -32,6 +32,25 @@
 
     <!-- 解锁后内容 -->
     <div id="content" class="content" hidden>
+        <!-- 课件资料 -->
+        <div class="materials">
+            <h3>📚 课件资料</h3>
+            <p class="materials-hint">点击课件在线查看（本页密码解锁后可见，课件已加密、不可下载）</p>
+            <div class="material-list">
+                <button class="material-item" data-pdf="assets/Intro_Comp_Math.pdf" data-title="计算数学导论（Intro_Comp_Math.pdf）">
+                    <span class="mi-icon">📄</span>
+                    <span class="mi-name">计算数学导论</span>
+                    <span class="mi-meta">Intro_Comp_Math.pdf · 74 页</span>
+                </button>
+                <button class="material-item" data-pdf="assets/Research_Writing.pdf" data-title="科研写作（Research_Writing.pdf）">
+                    <span class="mi-icon">📄</span>
+                    <span class="mi-name">科研写作</span>
+                    <span class="mi-meta">Research_Writing.pdf · 51 页</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- 答疑讨论 -->
         <div class="notice">
             <h2>💬 答疑讨论</h2>
             <p>本课程的疑问请在下方留言，我会定期回复；也可通过邮件或到办公室咨询。</p>
@@ -41,8 +60,24 @@
     </div>
 </div>
 
+<!-- PDF 查看器 -->
+<div id="pdf-viewer" class="pdf-viewer" hidden>
+    <div class="pdf-toolbar">
+        <span class="pdf-title" id="pdf-title"></span>
+        <button id="pdf-prev">‹ 上一页</button>
+        <span id="pdf-page">0 / 0</span>
+        <button id="pdf-next">下一页 ›</button>
+        <button id="pdf-close">✕</button>
+    </div>
+    <div class="pdf-canvas-wrap" id="pdf-canvas-wrap">
+        <canvas id="pdf-canvas"></canvas>
+    </div>
+</div>
+
 <script src="config.js"></script>
 <script>window.QA_CONFIG.giscus.term = '科研训练与写作';</script>
+<script src="lib/pdfjs/pdf.min.js"></script>
+<script src="pdf-viewer.js"></script>
 <script src="gate.js"></script>
 </body>
 </html>

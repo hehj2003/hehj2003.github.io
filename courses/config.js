@@ -26,5 +26,11 @@ window.QA_CONFIG = {
     categoryId: 'DIC_kwDOUg-eoM4DF7io',
     mapping: 'specific',
     term: ''           // 由各课程页覆盖（以课程名作为讨论标题）
-  }
+  },
+
+  /* ---- PDF 课件密码 ----
+   * 课件 PDF 已用此密码加密（AES-128），即使被下载、没有此密码也打不开。
+   * 前端需把明文密码传给 PDF.js 自动解密，故与课程页密码相同（optimization）。
+   */
+  pdfPassword: 'optimization'
 };
