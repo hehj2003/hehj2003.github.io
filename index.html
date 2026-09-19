@@ -963,89 +963,7 @@ switchLang('en');
     <div class="container">
         <h2 class="section-title">学生培养</h2>
 
-        <!-- 在读学生 -->
-        <div class="student-group">
-            <h3 class="student-group-title">在读学生</h3>
-            <div class="student-grid">
-                <div class="student-col">
-                    <h4>博士生</h4>
-                    <ul>
-                        <li><strong>潘晨健</strong>（2022级）</li>
-                        <li><strong>於锦涛</strong>（2023级）</li>
-                        <li><strong>何演超</strong>（2024级）</li>
-                        <li><strong>李轶彦</strong>（2026级）</li>
-                    </ul>
-                </div>
-                <div class="student-col">
-                    <h4>硕士生</h4>
-                    <ul>
-                        <li><strong>同卓然</strong>（2024级）</li>
-                        <li><strong>谢冰冰</strong>（2024级）</li>
-                        <li><strong>吴桐</strong>（2025级）</li>
-                        <li><strong>于钟宇</strong>（2025级）</li>
-                        <li><strong>杨思行</strong>（2026级）</li>
-                        <li><strong>郁雨昂</strong>（2026级）</li>
-                        <li><strong>陈子亿</strong>（2026级）</li>
-                    </ul>
-                </div>
-                <div class="student-col">
-                    <h4>本科生</h4>
-                    <ul>
-                        <li><strong>谭圣言</strong>（2023级）</li>
-                        <li><strong>韩易辰</strong>（2023级）</li>
-                        <li><strong>胡志康</strong>（2023级）</li>
-                        <li><strong>马汝睿</strong>（2023级）</li>
-                        <li><strong>方凯悦</strong>（2024级）</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- 已毕业学生 -->
-        <div class="student-group">
-            <h3 class="student-group-title">已毕业学生</h3>
-            <div class="student-grid">
-                <div class="student-col">
-                    <h4>博士生</h4>
-                    <ul>
-                        <li><strong>郝嘉骏</strong>（2026届）</li>
-                    </ul>
-                </div>
-                <div class="student-col">
-                    <h4>硕士生</h4>
-                    <ul>
-                        <li><strong>童皖彬</strong>（2020届）</li>
-                        <li><strong>赵寒</strong>（2021届）</li>
-                        <li><strong>刘琬纯</strong>（2021届）</li>
-                        <li><strong>陆婷霞</strong>（2022届）</li>
-                        <li><strong>赵璐璐</strong>（2022届）</li>
-                        <li><strong>周颖欣</strong>（2024届）</li>
-                        <li><strong>汪周</strong>（2024届）</li>
-                        <li><strong>王知雪</strong>（2025届）</li>
-                        <li><strong>吴一凡</strong>（2025届）</li>
-                        <li><strong>毛莹</strong>（2025届）</li>
-                        <li><strong>邢芳菲</strong>（2026届）</li>
-                        <li><strong>林鹏程</strong>（2026届）</li>
-                    </ul>
-                </div>
-                <div class="student-col">
-                    <h4>本科生</h4>
-                    <ul>
-                        <li><strong>何岸</strong>（2016届）</li>
-                        <li><strong>张乾</strong>（2016届）</li>
-                        <li><strong>陈佩佩</strong>（2018届）</li>
-                        <li><strong>屈云飞</strong>（2019届）</li>
-                        <li><strong>茅小宇</strong>（2021届）</li>
-                        <li><strong>张致远</strong>（2021届）</li>
-                        <li><strong>赵锡清</strong>（2024届）</li>
-                        <li><strong>戴振宇</strong>（2024届）</li>
-                        <li><strong>徐柯楠</strong>（2025届）</li>
-                        <li><strong>唐伟豪</strong>（2026届）</li>
-                        <li><strong>阮炜挺</strong>（2026届）</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+        <div id="students-container"></div>
     </div>
 </section>
 
@@ -1101,6 +1019,34 @@ switchLang('en');
 </footer>
 
 </div><!-- end .lang-zh -->
+
+<script src="site-data.js"></script>
+<script>
+(function renderStudents() {
+    var data = window.STUDENT_DATA;
+    var container = document.getElementById('students-container');
+    if (!data || !container) return;
+    var colLabels = { phd: '博士生', master: '硕士生', undergrad: '本科生' };
+    var groups = [
+        { key: 'current', title: '在读学生' },
+        { key: 'graduated', title: '已毕业学生' }
+    ];
+    function colHtml(items) {
+        if (!items || !items.length) return '<li><em class="student-empty">暂无</em></li>';
+        return items.map(function (s) {
+            return '<li><strong>' + s.name + '</strong>（' + s.year + '）</li>';
+        }).join('');
+    }
+    var html = groups.map(function (g) {
+        var cols = ['phd', 'master', 'undergrad'].map(function (k) {
+            var items = (data[g.key] && data[g.key][k]) || [];
+            return '<div class="student-col"><h4>' + colLabels[k] + '</h4><ul>' + colHtml(items) + '</ul></div>';
+        }).join('');
+        return '<div class="student-group"><h3 class="student-group-title">' + g.title + '</h3><div class="student-grid">' + cols + '</div></div>';
+    }).join('');
+    container.innerHTML = html;
+})();
+</script>
 
 </body>
 </html>
