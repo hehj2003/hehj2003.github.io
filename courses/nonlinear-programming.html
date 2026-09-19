@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>非线性规划理论 · 答疑讨论 — 何洪津</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="page">
+    <header class="course-header">
+        <a class="back-link" href="../index.html#cn-teaching">← 返回主页</a>
+        <h1>非线性规划理论</h1>
+        <p class="course-sub">Nonlinear Programming Theory · 答疑讨论区</p>
+    </header>
+
+    <!-- 密码门 -->
+    <div id="gate" class="gate">
+        <div class="gate-card">
+            <div class="gate-icon">🔒</div>
+            <h2>课程答疑讨论区</h2>
+            <p class="gate-hint">请输入访问密码以查看讨论内容</p>
+            <form id="gate-form" autocomplete="off">
+                <input type="password" id="gate-input" placeholder="请输入密码" />
+                <button type="submit">解锁</button>
+            </form>
+            <p id="gate-error" class="gate-error">密码错误，请重试</p>
+        </div>
+    </div>
+
+    <!-- 解锁后内容 -->
+    <div id="content" class="content" hidden>
+        <div class="notice">
+            <h2>💬 答疑讨论</h2>
+            <p>本课程的疑问请在下方留言，我会定期回复；也可通过邮件或到办公室咨询。</p>
+            <p class="contact">📧 <a href="mailto:hehongjin@nbu.edu.cn">hehongjin@nbu.edu.cn</a> · 🏫 宁波大学数学与统计学院包玉书楼306-2室</p>
+        </div>
+        <div id="giscus"></div>
+    </div>
+</div>
+
+<script src="config.js"></script>
+<script>window.QA_CONFIG.giscus.term = '非线性规划理论';</script>
+<script src="gate.js"></script>
+</body>
+</html>

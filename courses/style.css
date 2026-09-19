@@ -1,0 +1,61 @@
+/* ---- Reset & Base ---- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+    font-family: 'Inter', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #222; background: #f5f7fa; line-height: 1.7;
+}
+a { color: #1a56db; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.page { max-width: 760px; margin: 0 auto; padding: 24px 20px 80px; }
+
+/* ---- Header ---- */
+.course-header { padding: 28px 0 8px; }
+.back-link { font-size: 0.85rem; color: #1a56db; }
+.course-header h1 { font-size: 1.7rem; font-weight: 700; color: #1a3a5c; margin-top: 14px; }
+.course-sub { font-size: 0.9rem; color: #888; margin-top: 4px; }
+
+/* ---- 密码门 ---- */
+.gate { margin-top: 30px; }
+.gate-card {
+    background: #fff; border: 1px solid #e8ecf0; border-radius: 12px;
+    padding: 36px 28px; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+.gate-icon { font-size: 2.2rem; }
+.gate-card h2 { font-size: 1.15rem; font-weight: 700; color: #1a3a5c; margin: 12px 0 6px; }
+.gate-hint { font-size: 0.88rem; color: #888; margin-bottom: 20px; }
+#gate-form { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+#gate-input {
+    flex: 1; min-width: 200px; max-width: 300px;
+    padding: 10px 14px; font-size: 0.95rem;
+    border: 1px solid #d6e2fb; border-radius: 8px; font-family: inherit;
+}
+#gate-input:focus { outline: none; border-color: #1a56db; }
+#gate-form button {
+    padding: 10px 22px; font-size: 0.95rem; font-weight: 600; color: #fff;
+    background: #1a56db; border: none; border-radius: 8px; cursor: pointer; font-family: inherit;
+}
+#gate-form button:hover { background: #1646b8; }
+.gate-error { display: none; color: #d13438; font-size: 0.85rem; margin-top: 14px; }
+
+/* ---- 解锁后内容 ---- */
+.content { margin-top: 30px; }
+.notice {
+    background: #f0f5ff; border: 1px solid #d6e2fb; border-radius: 10px;
+    padding: 18px 20px; margin-bottom: 22px;
+}
+.notice h2 { font-size: 1.05rem; font-weight: 700; color: #1a3a5c; margin-bottom: 8px; }
+.notice p { font-size: 0.9rem; color: #444; }
+.notice .contact { margin-top: 8px; font-size: 0.85rem; color: #666; }
+
+#giscus {
+    background: #fff; border: 1px solid #e8ecf0; border-radius: 12px; padding: 16px;
+}
+.giscus-placeholder {
+    background: #fff; border: 1px dashed #d6e2fb; border-radius: 10px;
+    padding: 24px; text-align: center; color: #888; font-size: 0.9rem;
+}
+.giscus-placeholder code {
+    background: #eef2f9; padding: 1px 6px; border-radius: 4px; font-size: 0.85rem;
+}

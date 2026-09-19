@@ -177,25 +177,23 @@
         /* ---- Teaching ---- */
         .teaching-grid { display: flex; gap: 20px; flex-wrap: wrap; }
         .teaching-card {
-            flex: 1; min-width: 220px;
+            flex: 1; min-width: 220px; display: block;
             background: #fff; border: 1px solid #e8ecf0; border-radius: 10px;
             padding: 18px 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+            color: inherit; text-decoration: none;
+            transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+        }
+        .teaching-card:hover {
+            border-color: #1a56db; box-shadow: 0 4px 12px rgba(26,86,219,0.12);
+            transform: translateY(-2px); text-decoration: none;
         }
         .teaching-card h4 { font-size: 1rem; font-weight: 700; color: #1a3a5c; margin-bottom: 6px; }
         .teaching-card .tc-desc { font-size: 0.85rem; color: #666; line-height: 1.7; }
-        .qa-card {
-            margin-top: 22px; background: #f0f5ff; border: 1px solid #d6e2fb;
-            border-radius: 10px; padding: 18px 20px;
+        .teaching-card .tc-enter {
+            display: inline-block; margin-top: 10px; font-size: 0.8rem;
+            font-weight: 600; color: #1a56db;
         }
-        .qa-card h4 { font-size: 1rem; font-weight: 700; color: #1a3a5c; margin-bottom: 10px; }
-        .qa-card ul { list-style: none; }
-        .qa-card li { font-size: 0.9rem; padding: 4px 0; color: #444; }
-        .qa-card li a { color: #1a56db; }
-        .badge-soon {
-            display: inline-block; font-size: 0.72rem; font-weight: 600;
-            color: #2563eb; background: #e3ecfb; padding: 2px 10px; border-radius: 12px;
-            margin-left: 8px; vertical-align: middle;
-        }
+        .teaching-card:hover .tc-enter { text-decoration: underline; }
 
         /* ---- Contact ---- */
         .contact-grid { display: flex; flex-wrap: wrap; gap: 20px; }
@@ -544,27 +542,21 @@ switchLang('en');
     <div class="container">
         <h2 class="section-title">Teaching</h2>
         <div class="teaching-grid">
-            <div class="teaching-card">
+            <a class="teaching-card" href="courses/nonlinear-programming.html">
                 <h4>Nonlinear Programming Theory</h4>
                 <p class="tc-desc">Theory of nonlinear optimization: optimality conditions, duality, and algorithmic foundations.</p>
-            </div>
-            <div class="teaching-card">
+                <span class="tc-enter">Enter course →</span>
+            </a>
+            <a class="teaching-card" href="courses/numerical-optimization.html">
                 <h4>Numerical Optimization</h4>
                 <p class="tc-desc">Numerical methods for optimization, including first-order, splitting, and proximal algorithms.</p>
-            </div>
-            <div class="teaching-card">
+                <span class="tc-enter">Enter course →</span>
+            </a>
+            <a class="teaching-card" href="courses/research-training.html">
                 <h4>Research Training &amp; Writing</h4>
                 <p class="tc-desc">Academic writing, literature reading, and research methodology for graduate students.</p>
-            </div>
-        </div>
-
-        <div class="qa-card">
-            <h4>Q&amp;A / Discussion</h4>
-            <ul>
-                <li>Email: <a href="mailto:hehongjin@nbu.edu.cn">hehongjin@nbu.edu.cn</a></li>
-                <li>Office: Room 306-2, Baoyushu Building, School of Mathematics and Statistics, Ningbo University</li>
-                <li>Online discussion board<span class="badge-soon">Coming soon</span></li>
-            </ul>
+                <span class="tc-enter">Enter course →</span>
+            </a>
         </div>
     </div>
 </section>
@@ -1003,44 +995,21 @@ switchLang('en');
     <div class="container">
         <h2 class="section-title">教学</h2>
         <div class="teaching-grid">
-            <div class="teaching-card">
+            <a class="teaching-card" href="courses/nonlinear-programming.html">
                 <h4>非线性规划理论</h4>
                 <p class="tc-desc">系统讲授非线性优化的最优性条件、对偶理论与算法基础。</p>
-            </div>
-            <div class="teaching-card">
+                <span class="tc-enter">进入课程 →</span>
+            </a>
+            <a class="teaching-card" href="courses/numerical-optimization.html">
                 <h4>数值优化</h4>
                 <p class="tc-desc">优化问题的数值方法，涵盖一阶、分裂与邻近点类算法。</p>
-            </div>
-            <div class="teaching-card">
+                <span class="tc-enter">进入课程 →</span>
+            </a>
+            <a class="teaching-card" href="courses/research-training.html">
                 <h4>科研训练与写作</h4>
                 <p class="tc-desc">面向研究生的学术写作、文献阅读与科研方法训练。</p>
-            </div>
-        </div>
-
-        <div class="qa-card">
-            <h4>答疑讨论</h4>
-            <ul>
-                <li>邮箱：<a href="mailto:hehongjin@nbu.edu.cn">hehongjin@nbu.edu.cn</a></li>
-                <li>办公室：宁波大学数学与统计学院包玉书楼306-2室</li>
-            </ul>
-            <p style="font-size:0.85rem;color:#555;margin-top:12px;">在下方留言提问（需 GitHub 账号登录），我会在这里回复，所有人可见：</p>
-            <div class="giscus" style="margin-top:8px;min-height:150px;"></div>
-            <script src="https://giscus.app/client.js"
-                data-repo="hehj2003/hehj2003.github.io"
-                data-repo-id="MDEwOlJlcG9zaXRvcnkyMDA1NzMyMTY="
-                data-category="Q&A"
-                data-category-id="DIC_kwDOC_SBIM4DF3F0"
-                data-mapping="specific"
-                data-term="课程答疑讨论"
-                data-strict="0"
-                data-reactions-enabled="1"
-                data-emit-metadata="0"
-                data-input-position="top"
-                data-theme="light"
-                data-lang="zh-CN"
-                crossorigin="anonymous"
-                async>
-            </script>
+                <span class="tc-enter">进入课程 →</span>
+            </a>
         </div>
     </div>
 </section>
