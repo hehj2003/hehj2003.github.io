@@ -57,10 +57,16 @@
     if (pageLabel) pageLabel.textContent = '加载中…';
     currentPage = 1; totalPages = 0; pdfDoc = null;
 
-    var params = { url: url };
-    if (pdfPassword) params.password = pdfPassword;
-
-    pdfjsLib.getDocument(params).promise.then(function (pdf) {
+    // 用 fetch 手动下载 PDF 数据再交给 pdf.js 解析。
+    // 直接传 url 时 pdf.js 的下载器在 GitHub Pages 上会卡住，传 ArrayBuffer 可规避。
+    fetch(url).then(function (resp) {
+      if (!resp.ok) throw new Error('HTTP ' + resp.status);
+      return resp.arrayBuffer();
+    }).then(function (data) {
+      var params = { data: data };
+      if (pdfPassword) params.password = pdfPassword;
+      return pdfjsLib.getDocument(params).promise;
+    }).then(function (pdf) {
       pdfDoc = pdf;
       totalPages = pdf.numPages;
       renderPage(1);
