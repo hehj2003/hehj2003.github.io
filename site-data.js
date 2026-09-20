@@ -75,196 +75,190 @@ window.STUDENT_DATA = {
  * ============================================================= */
 window.PUBLICATIONS = [
   {
+    title: "On Recovery of Sparse Signals via the Fractional Optimization Dantzig Selector",
+    authors: "Jiajun Hao, Hongjin He, Peng Li, and Pengcheng Lin",
+    journal: "Inverse Problems, 42 (2026) 075009",
+    links: [{ text: "Link", url: "https://iopscience.iop.org/article/10.1088/1361-6420/ae7cac" }]
+  },
+  {
+    title: "Dynamic mode decomposition via difference of convex principal component analysis",
+    authors: "Wanting Lin, Yingxin Zhou, Linan Zhang, and Hongjin He",
+    journal: "Journal of Computational Physics, 563 (2026) 115112 (24 pages)",
+    links: [{ text: "DOI", url: "https://doi.org/10.1016/j.jcp.2026.115112" }]
+  },
+  {
     title: "A symmetric primal-dual algorithmic framework for saddle point problems",
-    authors: "Hongjin He, Kai Wang, Jintao Yu",
-    journal: "Journal of Computational Mathematics, 44 (2026) 1049–1082",
-    links: [{ text: "Link", url: "https://www.global-sci.com/index.php/JCM/article/view/23272/36095" }]
-  },
-  {
-    title: "Enhancing Tucker Tensor Completion via Laplace-Like Nonconvex Surrogates and Structural Regularization",
-    authors: "Wenhui Xie, Lei-Hong Zhang, Chen Ling, Hongjin He",
-    journal: "Journal of Scientific Computing, 106 (2026) Article No. 78",
-    links: [{ text: "DOI", url: "https://doi.org/10.1007/s10915-026-03205-y" }]
-  },
-  {
-    title: "A multi-step inertial Bregman proximal DC algorithm and its application to solving some inverse problems",
-    authors: "Zhixue Wang, Chenjian Pan, Hongjin He",
-    journal: "Journal of Computational and Applied Mathematics, 473 (2026) 116923",
-    links: [{ text: "Link", url: "https://www.sciencedirect.com/science/article/abs/pii/S0377042725004376" }]
+    authors: "Hongjin He, Kai Wang and Jintao Yu",
+    journal: "Journal of Computational Mathematics, 44 (2026) 1049-1082",
+    links: [{ text: "Link", url: "https://journal.global-sci.org/intro/online/read?online_id=2829" }]
   },
   {
     title: "A multi-step inertial extragradient algorithm for nonsmooth and nonconvex composite optimization problems",
-    authors: "Zhixue Wang, Hongjin He",
-    journal: "Journal of Global Optimization, 93 (2025) 489–521",
+    authors: "Zhixue Wang and Hongjin He",
+    journal: "Journal of Global Optimization, 93 (2025) 489-521",
     links: [{ text: "DOI", url: "https://doi.org/10.1007/s10898-025-01532-2" }]
   },
   {
     title: "An implementable proximal extragradient method for structured fractional programming",
-    authors: "Jiajun Hao, Hongjin He, Liangshao Hou",
+    authors: "Jiajun Hao, Hongjin He, and Liangshao Hou",
     journal: "Journal of Optimization Theory and Applications, 207 (2025) Article No. 35",
     links: [{ text: "Link", url: "https://link.springer.com/article/10.1007/s10957-025-02799-x" }]
   },
   {
     title: "A unified Bregman alternating minimization algorithm for generalized DC programs with application to imaging",
-    authors: "Hongjin He, Zhiyuan Zhang",
+    authors: "Hongjin He and Zhiyuan Zhang",
     journal: "Journal of Scientific Computing, 101 (2024) Article No. 76 (42 pages)",
     links: [{ text: "DOI", url: "https://doi.org/10.1007/s10915-024-02715-x" }]
   },
   {
     title: "Robust tensor recovery via a nonconvex approach with ket augmentation and auto-weighted strategy",
-    authors: "Wenhui Xie, Chen Ling, Hongjin He, Lei-Hong Zhang",
+    authors: "Wenhui Xie, Chen Ling, Hongjin He, and Lei-Hong Zhang",
     journal: "Numerical Linear Algebra with Applications, 31 (2024) e2580",
     links: [{ text: "Link", url: "https://onlinelibrary.wiley.com/doi/abs/10.1002/nla.2580" }]
   },
   {
     title: "A tensor train approach for internet traffic data completion",
-    authors: "Zhiyuan Zhang, Chen Ling, Hongjin He, Liqun Qi",
-    journal: "Annals of Operations Research, 339 (2024) 1461–1479",
+    authors: "Zhiyuan Zhang, Chen Ling, Hongjin He, and Liqun Qi",
+    journal: "Annals of Operations Research, 339 (2024) 1461-1479",
     links: [{ text: "DOI", url: "https://doi.org/10.1007/s10479-021-04147-4" }]
   },
   {
     title: "A proximal alternating direction method of multipliers for DC programming with structured constraints",
-    authors: "Yingxin Zhou, Hongjin He, Linan Zhang",
+    authors: "Yingxin Zhou, Hongjin He, and Linan Zhang",
     journal: "Journal of Scientific Computing, 99 (2024) Article No. 89",
     links: [{ text: "Link", url: "https://link.springer.com/article/10.1007/s10915-024-02550-0" }]
   },
   {
-    title: "Structured model selection via ℓ₁-ℓ₂ optimization",
-    authors: "Xiaofan Lu, Linan Zhang, Hongjin He",
+    title: "Structured model selection via ℓ1-ℓ2 optimization",
+    authors: "Xiaofan Lu, Linan Zhang, and Hongjin He",
     journal: "Inverse Problems, 40 (2024) 015011 (28pp)",
-    links: [{ text: "DOI", url: "https://iopscience.iop.org/article/10.1088/1361-6420/ad0fad" }]
+    links: [{ text: "Link", url: "https://iopscience.iop.org/article/10.1088/1361-6420/ad0fad" }]
   },
   {
     title: "A partially inertial customized Douglas-Rachford splitting method for a class of structured optimization problems",
-    authors: "Yunfei Qu, Hongjin He, Deren Han",
+    authors: "Yunfei Qu, Hongjin He, and Deren Han",
     journal: "Journal of Scientific Computing, 98 (2024) Article No. 9 (24 pages)",
     links: [{ text: "DOI", url: "https://doi.org/10.1007/s10915-023-02397-x" }]
   },
   {
     title: "Tensor completion via a generalized transformed tensor T-product decomposition without t-SVD",
-    authors: "Hongjin He, Chen Ling, Wenhui Xie",
-    journal: "Journal of Scientific Computing, 93 (2022) Article No. 47 (35 pages)",
+    authors: "Hongjin He, Chen Ling and Wenhui Xie",
+    journal: "Journal of Scientific Computing, 93 (2022) Article No. 47(35 pages)",
     links: [{ text: "DOI", url: "https://doi.org/10.1007/s10915-022-02006-3" }]
   },
   {
     title: "A unified Douglas-Rachford algorithm for generalized DC programming",
-    authors: "Chih-Sheng Chuang, Hongjin He, Zhiyuan Zhang",
+    authors: "Chih-Sheng Chuang, Hongjin He, and Zhiyuan Zhang",
     journal: "Journal of Global Optimization, 82 (2022) 331–349",
     links: [{ text: "DOI", url: "https://doi.org/10.1007/s10898-021-01079-y" }]
   },
   {
     title: "A nonnegativity preserving algorithm for multilinear systems with nonsingular M-tensors",
-    authors: "Xueli Bai, Hongjin He, Chen Ling, Guanglu Zhou",
-    journal: "Numerical Algorithms, 87 (2021) 1301–1320",
+    authors: "Xueli Bai, Hongjin He, Chen Ling, and Guanglu Zhou",
+    journal: "Numerical Algorithms, 87 (2021) 1301–1320. ISSN: 1017-1398",
     links: [{ text: "DOI", url: "https://doi.org/10.1007/s11075-020-01008-2" }]
   },
   {
-    title: "A customized low-rank prior model for structured cartoon-texture image decomposition",
-    authors: "Zhiyuan Zhang, Hongjin He",
-    journal: "Signal Processing: Image Communication, 96 (2021) 116308",
-    links: [{ text: "CODE", url: "https://github.com/Zhiyuan-Zhang510zg/CLRP" }]
-  },
-  {
     title: "A double extrapolation primal-dual algorithm for saddle point problems",
-    authors: "Kai Wang, Hongjin He",
-    journal: "Journal of Scientific Computing, 85 (2020) Article 30",
+    authors: "Kai Wang and Hongjin He",
+    journal: "Journal of Scientific Computing, 85 (2020) Article Number 30:1-30. ISSN: 0885-7474",
     links: [{ text: "DOI", url: "https://doi.org/10.1007/s10915-020-01330-w" }]
   },
   {
     title: "Further study on tensor absolute value equations",
-    authors: "Chen Ling, Weijie Yan, Hongjin He, Liqun Qi",
-    journal: "Science China: Mathematics, 63 (2020) 2137–2156",
+    authors: "Chen Ling, Weijie Yan, Hongjin He, and Liqun Qi",
+    journal: "Science China: Mathematics, 63 (2020) 2137–2156. ISSN: 1674-7283",
     links: [{ text: "DOI", url: "https://doi.org/10.1007/s11425-018-9560-3" }]
   },
   {
     title: "Convergence analysis of positive-indefinite proximal ADMM with a Glowinski's relaxation factor",
-    authors: "Jiawei Chen, Yijun Wang, Hongjin He, Yibing Lv",
-    journal: "Numerical Algorithms, 83 (2020) 1415–1440",
+    authors: "Jiawei Chen, Yijun Wang, Hongjin He, and Yibing Lv",
+    journal: "Numerical Algorithms, 83 (2020) 1415–1440. ISSN: 1017-1398",
     links: []
   },
   {
     title: "A partially isochronous splitting algorithm for three-block separable convex minimization problems",
-    authors: "Hongjin He, Liusheng Hou, Hong-Kun Xu",
-    journal: "Advances in Computational Mathematics, 44 (2018) 1091–1115",
-    links: [{ text: "DOI", url: "https://doi.org/10.1007/s10444-017-9574-4" }]
+    authors: "Hongjin He, Liusheng Hou, and Hong-Kun Xu",
+    journal: "Advances in Computational Mathematics, 44 (2018) 1091–1115. ISSN: 1019-7168",
+    links: [{ text: "DOI", url: "http://dx.doi.org/10.1007/s10444-017-9574-4" }]
   },
   {
     title: "A globally and quadratically convergent algorithm for solving multilinear systems with M-tensors",
-    authors: "Hongjin He, Chen Ling, Liqun Qi, Guanglu Zhou",
-    journal: "Journal of Scientific Computing, 76 (2018) 1718–1741",
+    authors: "Hongjin He, Chen Ling, Liqun Qi, and Guanglu Zhou",
+    journal: "Journal of Scientific Computing, 76 (2018) 1718–1741. ISSN: 0885-7474",
     links: [{ text: "DOI", url: "https://doi.org/10.1007/s10915-018-0689-7" }]
   },
   {
     title: "Splitting methods for split feasibility problems with application to Dantzig selectors",
-    authors: "Hongjin He, Hong-Kun Xu",
-    journal: "Inverse Problems, 33 (2017) 055003 (28pp)",
-    links: [{ text: "DOI", url: "http://iopscience.iop.org/article/10.1088/1361-6420/aa5ec5" }]
+    authors: "Hongjin He and Hong-Kun Xu",
+    journal: "Inverse Problems, 33 (2017) 055003 (28pp). ISSN: 0266-5611",
+    links: [{ text: "Link", url: "http://iopscience.iop.org/article/10.1088/1361-6420/aa5ec5" }]
   },
   {
     title: "Perturbation resilience and superiorization methodology of averaged mappings",
-    authors: "Hongjin He, Hong-Kun Xu",
-    journal: "Inverse Problems, 33 (2017) 044007 (11pp)",
-    links: [{ text: "DOI", url: "http://iopscience.iop.org/article/10.1088/1361-6420/33/4/044007" }]
+    authors: "Hongjin He and Hong-Kun Xu",
+    journal: "Inverse Problems, 33 (2017) 044007 (11pp). ISSN: 0266-5611",
+    links: [{ text: "Link", url: "http://iopscience.iop.org/article/10.1088/1361-6420/33/4/044007" }]
   },
   {
     title: "A primal-dual prediction-correction algorithm for saddle point optimization",
-    authors: "Hongjin He, Jitamitra Desai, Kai Wang",
-    journal: "Journal of Global Optimization, 66 (2016) 573–583",
-    links: [{ text: "DOI", url: "http://link.springer.com/article/10.1007/s10898-016-0437-1" }]
+    authors: "Hongjin He, Jitamitra Desai, and Kai Wang",
+    journal: "Journal of Global Optimization, 66 (2016) 573–583. ISSN: 0925-5001",
+    links: [{ text: "Link", url: "http://link.springer.com/article/10.1007/s10898-016-0437-1" }]
   },
   {
     title: "Higher-degree eigenvalue complementarity problem for tensors",
-    authors: "Chen Ling, Hongjin He, Liqun Qi",
-    journal: "Computational Optimization and Applications, 64 (2016) 149–176",
-    links: [{ text: "DOI", url: "http://link.springer.com/article/10.1007/s10589-015-9805-x" }]
+    authors: "Chen Ling, Hongjin He, and Liqun Qi",
+    journal: "Computational Optimization and Applications, 64 (2016) 149–176. ISSN: 0926-6003",
+    links: [{ text: "Link", url: "http://link.springer.com/article/10.1007/s10589-015-9805-x" }]
   },
   {
-    title: "An implementable splitting algorithm for the ℓ₁-norm regularized split feasibility problem",
-    authors: "Hongjin He, Chen Ling, Hong-Kun Xu",
-    journal: "Journal of Scientific Computing, 67 (2016) 281–298",
-    links: [{ text: "DOI", url: "http://link.springer.com/article/10.1007/s10915-015-0078-4" }]
+    title: "An implementable splitting algorithm for the ℓ1-norm regularized split feasibility problem",
+    authors: "Hongjin He, Chen Ling, and Hong-Kun Xu",
+    journal: "Journal of Scientific Computing, 67 (2016) 281–298. ISSN: 0885-7474",
+    links: [{ text: "Link", url: "http://link.springer.com/article/10.1007/s10915-015-0078-4" }]
   },
   {
     title: "A distributed Douglas-Rachford splitting method for multi-block convex minimization problems",
-    authors: "Hongjin He, Deren Han",
-    journal: "Advances in Computational Mathematics, 42 (2016) 27–53",
-    links: [{ text: "DOI", url: "http://link.springer.com/article/10.1007/s10444-015-9408-1" }]
+    authors: "Hongjin He and Deren Han",
+    journal: "Advances in Computational Mathematics, 42 (2016) 27–53. ISSN: 1019-7168",
+    links: [{ text: "Link", url: "http://link.springer.com/article/10.1007/s10444-015-9408-1" }]
   },
   {
     title: "A partially parallel splitting method for multiple-block separable convex programming with applications to robust PCA",
-    authors: "Liusheng Hou, Hongjin He, Junfeng Yang",
-    journal: "Computational Optimization and Applications, 63 (2016) 273–303",
-    links: [{ text: "DOI", url: "http://link.springer.com/article/10.1007/s10589-015-9770-4" }]
+    authors: "Liusheng Hou, Hongjin He, and Junfeng Yang",
+    journal: "Computational Optimization and Applications, 63 (2016) 273–303. ISSN: 0926-6003",
+    links: [{ text: "Link", url: "http://link.springer.com/article/10.1007\%2Fs10589-015-9770-4" }]
   },
   {
     title: "On the cone eigenvalue complementarity problem for higher-order tensors",
-    authors: "Chen Ling, Hongjin He, Liqun Qi",
-    journal: "Computational Optimization and Applications, 63 (2016) 143–168",
-    links: [{ text: "DOI", url: "http://link.springer.com/article/10.1007/s10589-015-9767-z" }]
+    authors: "Chen Ling, Hongjin He, and Liqun Qi",
+    journal: "Computational Optimization and Applications, 63 (2016) 143–168. ISSN: 0926-6003",
+    links: [{ text: "Link", url: "http://link.springer.com/article/10.1007/s10589-015-9767-z" }]
   },
   {
     title: "A fast splitting method tailored for Dantzig selector",
-    authors: "Hongjin He, Xingju Cai, Deren Han",
-    journal: "Computational Optimization and Applications, 62 (2015) 347–372",
-    links: [{ text: "DOI", url: "http://link.springer.com/article/10.1007/s10589-015-9748-2" }]
+    authors: "Hongjin He, Xingju Cai, and Deren Han",
+    journal: "Computational Optimization and Applications, 62 (2015) 347–372. ISSN: 0926-6003",
+    links: [{ text: "Link", url: "http://link.springer.com/article/10.1007/s10589-015-9748-2" }]
   },
   {
     title: "A relaxed projection method for split variational inequalities",
-    authors: "Hongjin He, Chen Ling, Hong-Kun Xu",
-    journal: "Journal of Optimization Theory and Applications, 166 (2015) 213–233",
-    links: [{ text: "DOI", url: "http://link.springer.com/article/10.1007/s10957-014-0598-3" }]
+    authors: "Hongjin He, Chen Ling, and Hong-Kun Xu",
+    journal: "Journal of Optimization Theory and Applications, 166 (2015) 213–233. ISSN: 0022-3239",
+    links: [{ text: "Link", url: "http://link.springer.com/article/10.1007\%2Fs10957-014-0598-3" }]
   },
   {
     title: "A customized Douglas-Rachford splitting algorithm for separable convex minimization with linear constraints",
-    authors: "Deren Han, Hongjin He, Hai Yang, Xiaoming Yuan",
-    journal: "Numerische Mathematik, 127 (2014) 167–200",
-    links: [{ text: "DOI", url: "http://link.springer.com/article/10.1007/s00211-013-0580-2" }]
+    authors: "Deren Han, Hongjin He, Hai Yang, and Xiaoming Yuan",
+    journal: "Numerische Mathematik, 127 (2014) 167–200. ISSN: 0029-599X",
+    links: [{ text: "Link", url: "http://link.springer.com/article/10.1007\%2Fs00211-013-0580-2#page-1" }]
   },
   {
     title: "Some projection methods with the BB step sizes for variational inequalities",
-    authors: "Hongjin He, Deren Han, Zhibao Li",
-    journal: "Journal of Computational and Applied Mathematics, 236 (2012) 2590–2604",
-    links: [{ text: "DOI", url: "http://www.sciencedirect.com/science/article/pii/S0377042711006315" }]
+    authors: "Hongjin He, Deren Han, and Zhibao Li",
+    journal: "Journal of Computational and Applied Mathematics, 236 (2012) 2590–2604. ISSN: 0377-0427",
+    links: [{ text: "Link", url: "http://www.sciencedirect.com/science/article/pii/S0377042711006315" }]
   },
 ];
 
