@@ -523,7 +523,18 @@ switchLang('en');
     <div class="container">
         <h2 class="section-title">学生培养</h2>
 
-        <div id="students-container"></div>
+        <div class="teaching-grid">
+            <a class="teaching-card" href="students-current.html">
+                <h4>在读学生</h4>
+                <p class="tc-desc">博士生、硕士生、本科生。</p>
+                <span class="tc-enter">进入 &rarr;</span>
+            </a>
+            <a class="teaching-card" href="students-graduated.html">
+                <h4>已毕业学生</h4>
+                <p class="tc-desc">博士生、硕士生、本科生。</p>
+                <span class="tc-enter">进入 &rarr;</span>
+            </a>
+        </div>
     </div>
 </section>
 
@@ -579,34 +590,6 @@ switchLang('en');
 </footer>
 
 </div><!-- end .lang-zh -->
-
-<script src="site-data.js"></script>
-<script>
-(function renderStudents() {
-    var data = window.STUDENT_DATA;
-    var container = document.getElementById('students-container');
-    if (!data || !container) return;
-    var colLabels = { phd: '博士生', master: '硕士生', undergrad: '本科生' };
-    var groups = [
-        { key: 'current', title: '在读学生' },
-        { key: 'graduated', title: '已毕业学生' }
-    ];
-    function colHtml(items) {
-        if (!items || !items.length) return '<li><em class="student-empty">暂无</em></li>';
-        return items.map(function (s) {
-            return '<li><strong>' + s.name + '</strong>（' + s.year + '）</li>';
-        }).join('');
-    }
-    var html = groups.map(function (g) {
-        var cols = ['phd', 'master', 'undergrad'].map(function (k) {
-            var items = (data[g.key] && data[g.key][k]) || [];
-            return '<div class="student-col"><h4>' + colLabels[k] + '</h4><ul>' + colHtml(items) + '</ul></div>';
-        }).join('');
-        return '<div class="student-group"><h3 class="student-group-title">' + g.title + '</h3><div class="student-grid">' + cols + '</div></div>';
-    }).join('');
-    container.innerHTML = html;
-})();
-</script>
 
 </body>
 </html>

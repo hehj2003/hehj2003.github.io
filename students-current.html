@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>在读学生 — 何洪津</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Inter', 'Noto Sans SC', -apple-system, sans-serif; color: #222; background: #f5f7fa; line-height: 1.7; }
+        a { color: #1a56db; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .page { max-width: 900px; margin: 0 auto; padding: 24px 20px 80px; }
+
+        header { padding: 28px 0 8px; }
+        .back-link { font-size: 0.85rem; color: #1a56db; }
+        header h1 { font-size: 1.7rem; font-weight: 700; color: #1a3a5c; margin-top: 14px; }
+        header .sub { font-size: 0.9rem; color: #888; margin-top: 4px; }
+
+        .block { background: #fff; border: 1px solid #e8ecf0; border-radius: 12px; padding: 24px; margin-top: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+        .block-title { font-size: 1.15rem; font-weight: 700; color: #1a3a5c; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #2563eb; }
+
+        .student-grid { display: flex; gap: 32px; }
+        .student-col { flex: 1; min-width: 0; }
+        .student-col h4 { font-size: 1rem; font-weight: 700; color: #2563eb; margin-bottom: 10px; padding-bottom: 4px; border-bottom: 1px dashed #d0d7e2; }
+        .student-col ul { list-style: none; }
+        .student-col li { padding: 6px 0; font-size: 0.9rem; line-height: 1.6; border-bottom: 1px solid #f3f5f8; }
+        .student-col li:last-child { border-bottom: none; }
+        .student-empty { color: #bbb; font-style: normal; }
+
+        @media (max-width: 700px) {
+            .student-grid { flex-direction: column; gap: 20px; }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <header>
+        <a class="back-link" href="index.html#cn-students">← 返回主页</a>
+        <h1>在读学生</h1>
+        <p class="sub">Current Students</p>
+    </header>
+
+    <section class="block">
+        <h2 class="block-title">在读学生</h2>
+        <div class="student-grid">
+            <div class="student-col">
+                <h4>博士生</h4>
+                <ul id="s-phd"></ul>
+            </div>
+            <div class="student-col">
+                <h4>硕士生</h4>
+                <ul id="s-master"></ul>
+            </div>
+            <div class="student-col">
+                <h4>本科生</h4>
+                <ul id="s-undergrad"></ul>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script src="site-data.js"></script>
+<script>
+(function () {
+    var d = window.STUDENT_DATA && window.STUDENT_DATA.current;
+    function renderList(items) {
+        if (!items || !items.length) return '<li><em class="student-empty">暂无</em></li>';
+        return items.map(function (s) {
+            return '<li><strong>' + s.name + '</strong>（' + s.year + '）</li>';
+        }).join('');
+    }
+    document.getElementById('s-phd').innerHTML = renderList(d && d.phd);
+    document.getElementById('s-master').innerHTML = renderList(d && d.master);
+    document.getElementById('s-undergrad').innerHTML = renderList(d && d.undergrad);
+})();
+</script>
+</body>
+</html>
