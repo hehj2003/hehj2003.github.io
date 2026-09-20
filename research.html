@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>科研 — 何洪津</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Inter', 'Noto Sans SC', -apple-system, sans-serif; color: #222; background: #f5f7fa; line-height: 1.7; }
+        a { color: #1a56db; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .page { max-width: 900px; margin: 0 auto; padding: 24px 20px 80px; }
+
+        header { padding: 28px 0 8px; }
+        .back-link { font-size: 0.85rem; color: #1a56db; }
+        header h1 { font-size: 1.7rem; font-weight: 700; color: #1a3a5c; margin-top: 14px; }
+        header .sub { font-size: 0.9rem; color: #888; margin-top: 4px; }
+
+        .block { background: #fff; border: 1px solid #e8ecf0; border-radius: 12px; padding: 24px; margin-top: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+        .block-title { font-size: 1.15rem; font-weight: 700; color: #1a3a5c; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #2563eb; }
+
+        /* 论文列表 */
+        .pub-list { list-style: none; counter-reset: pub-counter; }
+        .pub-list li { counter-increment: pub-counter; padding: 7px 0 7px 30px; position: relative; font-size: 0.9rem; line-height: 1.7; border-bottom: 1px solid #f0f2f5; }
+        .pub-list li:last-child { border-bottom: none; }
+        .pub-list li::before { content: "[" counter(pub-counter) "]"; position: absolute; left: 0; color: #2563eb; font-weight: 600; font-size: 0.82rem; }
+        .pub-title { font-weight: 600; }
+        .pub-authors { color: #444; }
+        .pub-authors b { color: #222; font-weight: 700; }
+        .pub-journal { color: #666; font-style: italic; }
+        .pub-links { display: inline-flex; gap: 6px; margin-left: 6px; }
+        .pub-links a { font-size: 0.75rem; background: #e8edf5; padding: 1px 8px; border-radius: 10px; color: #1a56db; }
+        .pub-links a:hover { background: #d0ddf0; text-decoration: none; }
+
+        /* 项目列表 */
+        .project-grid { display: flex; gap: 32px; }
+        .project-col { flex: 1; min-width: 0; }
+        .project-sub { font-size: 1rem; font-weight: 700; color: #2563eb; margin-bottom: 10px; padding-bottom: 4px; border-bottom: 1px dashed #d0d7e2; }
+        .grant-list { list-style: none; }
+        .grant-list li { padding: 9px 0; border-bottom: 1px solid #eef1f5; font-size: 0.9rem; line-height: 1.7; }
+        .grant-list li:last-child { border-bottom: none; }
+        .grant-source { font-weight: 600; }
+        .grant-role { color: #2563eb; font-weight: 500; }
+        .grant-date { color: #888; font-size: 0.85rem; }
+        .grant-num { color: #888; font-size: 0.85rem; }
+
+        @media (max-width: 700px) {
+            .project-grid { flex-direction: column; gap: 20px; }
+            .pub-list li { padding-left: 26px; font-size: 0.86rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <header>
+        <a class="back-link" href="index.html#cn-research-portal">← 返回主页</a>
+        <h1>科研</h1>
+        <p class="sub">Research — Publications &amp; Projects</p>
+    </header>
+
+    <section class="block">
+        <h2 class="block-title">科研论文</h2>
+        <ol class="pub-list" id="pub-list"></ol>
+        <p style="margin-top:16px;font-size:0.85rem;color:#888;"><em>完整论文列表请见 <a href="https://scholar.google.com/citations?user=hehj2003" target="_blank">Google Scholar</a>。</em></p>
+    </section>
+
+    <section class="block">
+        <h2 class="block-title">科研项目</h2>
+        <div class="project-grid">
+            <div class="project-col">
+                <h3 class="project-sub">主持项目</h3>
+                <ul class="grant-list" id="grant-led"></ul>
+            </div>
+            <div class="project-col">
+                <h3 class="project-sub">参与项目</h3>
+                <ul class="grant-list" id="grant-participated"></ul>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script src="site-data.js"></script>
+<script>
+(function () {
+    var pubs = window.PUBLICATIONS || [];
+    document.getElementById('pub-list').innerHTML = pubs.map(function (p) {
+        var authors = (p.authors || '').replace(/Hongjin He/g, '<b>Hongjin He</b>');
+        var links = (p.links || []).map(function (l) {
+            return '<a href="' + l.url + '" target="_blank">' + l.text + '</a>';
+        }).join(' ');
+        return '<li>' +
+            '<span class="pub-title">' + p.title + '</span><br>' +
+            '<span class="pub-authors">' + authors + '</span><br>' +
+            '<span class="pub-journal">' + p.journal + '</span>' +
+            (links ? '<span class="pub-links">' + links + '</span>' : '') +
+            '</li>';
+    }).join('');
+
+    function grantHtml(g) {
+        return '<li>' +
+            '<span class="grant-source">' + g.source + '</span>，<span class="grant-role">' + g.role + '</span>，<span class="grant-date">' + g.date + '</span><br>' +
+            '<span class="grant-num">' + g.num + '</span>' +
+            '</li>';
+    }
+    var proj = window.PROJECTS || {};
+    document.getElementById('grant-led').innerHTML = (proj.led || []).map(grantHtml).join('');
+    document.getElementById('grant-participated').innerHTML = (proj.participated || []).map(grantHtml).join('');
+})();
+</script>
+</body>
+</html>
