@@ -37,7 +37,7 @@ window.STUDENT_DATA = {
   /* ---- 已毕业学生 ---- */
   graduated: {
     phd: [
-      { name: "郝嘉骏", year: "2026届" }
+      { name: "郝嘉骏", year: "2026届", destination: "太原师范学院" }
     ],
     master: [
       { name: "童皖彬", year: "2020届" },

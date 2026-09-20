@@ -68,7 +68,8 @@
     function renderList(items) {
         if (!items || !items.length) return '<li><em class="student-empty">暂无</em></li>';
         return items.map(function (s) {
-            return '<li><strong>' + s.name + '</strong>（' + s.year + '）</li>';
+            var dest = s.destination ? '，去向：' + s.destination : '';
+            return '<li><strong>' + s.name + '</strong>（' + s.year + dest + '）</li>';
         }).join('');
     }
     document.getElementById('s-phd').innerHTML = renderList(d && d.phd);
